@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpROSE.Charserver", "ExpRO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpROSE.Worldserver", "ExpROSE.Worldserver\ExpROSE.Worldserver.csproj", "{D1C0A63D-EE77-402E-A12D-47D0B90AFA59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpROSE", "ExpROSE.Network\ExpROSE.csproj", "{8EC0A9C0-C08B-4745-AA81-02839961482A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpROSE", "ExpROSE\ExpROSE.csproj", "{8EC0A9C0-C08B-4745-AA81-02839961482A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

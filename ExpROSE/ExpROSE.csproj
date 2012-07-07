@@ -7,8 +7,8 @@
     <ProjectGuid>{8EC0A9C0-C08B-4745-AA81-02839961482A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExpROSE.Network</RootNamespace>
-    <AssemblyName>ExpROSE.Network</AssemblyName>
+    <RootNamespace>ExpROSE</RootNamespace>
+    <AssemblyName>ExpROSE</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

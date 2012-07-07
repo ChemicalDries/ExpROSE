@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExpROSE.Network\ExpROSE.csproj">
+    <ProjectReference Include="..\ExpROSE\ExpROSE.csproj">
       <Project>{8ec0a9c0-c08b-4745-aa81-02839961482a}</Project>
       <Name>ExpROSE</Name>
     </ProjectReference>
