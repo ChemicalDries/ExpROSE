@@ -10,6 +10,12 @@ namespace ExpROSE.Loginserver
     {
         static void Main(string[] args)
         {
+
+            Console.Title = "Experimental ROSE Online - Build: " + " 0.1 " + " [Memory Usage: " + GC.GetTotalMemory(false) / 1024 + "KB]";
+
+            Core.Main.Boot();
+
+            Console.ReadKey();
         }
     }
 }

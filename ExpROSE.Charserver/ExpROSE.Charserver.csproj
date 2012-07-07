@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>b9c4af6f-3049-465e-92da-d394ef84ee44</ProjectGuid>
+    <ProjectGuid>{E8C7BCB7-F676-4D5C-BC8F-1923675022C0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExpROSE.Charserver</RootNamespace>
