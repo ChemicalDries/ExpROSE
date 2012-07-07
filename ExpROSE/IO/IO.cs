@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
 
 namespace ExpROSE.IO
@@ -15,15 +12,17 @@ namespace ExpROSE.IO
         /// Enum with flags for log importancies. If 'minimumImportance' flag is higher than the action to be logged, then the action won't be logged.
         /// </summary>
         public enum logFlags { ImportantAction = 3, StandardAction = 2, BelowStandardAction = 1, UnimportantAction = 0 }
+
         /// <summary>
         /// Flag for minimum importance in logs. Adjust this to don't print less important logs.
         /// </summary>
         public static logFlags minimumImportance;
+
         /// <summary>
         /// Prints a green line of log, together with timestamp and method name.
         /// </summary>
         /// <param name="logText">The log line to be printed.</param>
-        public static void WriteLine(string logText,bool Debugmode = false)
+        public static void WriteLine(string logText, bool Debugmode = false)
         {
             DateTime _DTN = DateTime.Now;
             StackFrame _SF = new StackTrace().GetFrame(1);
@@ -47,6 +46,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Prints a green line of log, together with timestamp and method name.
         /// </summary>
@@ -79,6 +79,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Prints a customizeable line of log, together with timestamp and method name.
         /// </summary>
@@ -86,7 +87,7 @@ namespace ExpROSE.IO
         /// <param name="logFlag">The importance flag of this log line.</param>
         /// <param name="colorOne">The color to use on the left.</param>
         /// <param name="colorTwo">The color to use on the right.</param>
-        public static void WriteLine(string logText, logFlags logFlag, bool debugmode , ConsoleColor colorOne, ConsoleColor colorTwo)
+        public static void WriteLine(string logText, logFlags logFlag, bool debugmode, ConsoleColor colorOne, ConsoleColor colorTwo)
         {
             if ((int)logFlag < (int)minimumImportance)
                 return;
@@ -113,6 +114,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Prints a customizeable line of log, together with timestamp and title.
         /// </summary>
@@ -147,6 +149,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Prints a customizeable line of log, together with timestamp and title.
         /// </summary>
@@ -181,10 +184,12 @@ namespace ExpROSE.IO
             Console.Write(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         public static void WriteTrace(string logText)
         {
             return;
         }
+
         /// <summary>
         /// Prints a red, error line of log, together with timestamp and method name.
         /// </summary>
@@ -213,6 +218,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Prints a red, error line of log, together with timestamp and method name.
         /// </summary>
@@ -245,6 +251,7 @@ namespace ExpROSE.IO
             Console.WriteLine(logText);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+
         /// <summary>
         /// Writes a plain text line.
         /// </summary>
@@ -253,6 +260,7 @@ namespace ExpROSE.IO
         {
             Console.WriteLine(logText);
         }
+
         /// <summary>
         /// Writes a blank line.
         /// </summary>
@@ -260,6 +268,7 @@ namespace ExpROSE.IO
         {
             Console.WriteLine();
         }
+
         /// <summary>
         /// Writes a special line of log, with customizeable colors and header coloring of logText.
         /// </summary>

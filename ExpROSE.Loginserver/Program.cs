@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExpROSE.Loginserver
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
-            Console.Title = "Experimental ROSE Online - Build: " + " 0.1 " + " [Memory Usage: " + GC.GetTotalMemory(false) / 1024 + "KB]";
+            Console.Title = "Experimental ROSE Online Emulator - Build: " + " 0.1 " + " [Memory Usage: " + GC.GetTotalMemory(false) / 1024 + "KB]";
 
             Core.Main.Boot();
 

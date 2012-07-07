@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net;
 using System.Net.Sockets;
 
 namespace ExpROSE.Managers
@@ -14,7 +10,8 @@ namespace ExpROSE.Managers
     public static class SocketManager
     {
         public static Hashtable activeSockets = new Hashtable();
-        internal static Socket GetInstance(int SocketID)
+
+        public static Socket GetInstance(int SocketID)
         {
             //Does the socket exist?
             if (activeSockets.ContainsKey(SocketID) == true)

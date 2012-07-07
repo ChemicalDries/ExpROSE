@@ -16,11 +16,12 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,10 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Sockets.cs" />
+    <Compile Include="Managers\Account.cs" />
     <Compile Include="Core\Main.cs" />
     <Compile Include="Core\Threading.cs" />
+    <Compile Include="Managers\PacketManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managers\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -53,6 +58,10 @@
     <ProjectReference Include="..\ExpROSE\ExpROSE.csproj">
       <Project>{8ec0a9c0-c08b-4745-aa81-02839961482a}</Project>
       <Name>ExpROSE</Name>
+    </ProjectReference>
+    <ProjectReference Include="F:\RoseCrypt\RoseCrypt\RoseCrypt.vcxproj">
+      <Project>{adb33c08-b46d-442d-9af2-2a72e97dbf0f}</Project>
+      <Name>RoseCrypt</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

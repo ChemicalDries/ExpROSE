@@ -15,11 +15,13 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,10 +43,16 @@
   <ItemGroup>
     <Compile Include="IO\Data.cs" />
     <Compile Include="IO\INI.cs" />
+    <Compile Include="IO\Packet.cs" />
     <Compile Include="Managers\SocketManager.cs" />
-    <Compile Include="Sockets\Sockets.cs" />
     <Compile Include="IO\IO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\RoseCrypt\RoseCrypt\RoseCrypt.vcxproj">
+      <Project>{adb33c08-b46d-442d-9af2-2a72e97dbf0f}</Project>
+      <Name>RoseCrypt</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

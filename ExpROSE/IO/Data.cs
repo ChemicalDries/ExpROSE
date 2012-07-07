@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 
 namespace ExpROSE.IO
@@ -10,7 +6,7 @@ namespace ExpROSE.IO
     /// <summary>
     /// Methods that can handle files and directories.
     /// </summary>
-    class Data
+    internal class Data
     {
         /// <summary>
         /// Returns the directory of the executeable (without backslash at end) as a string.
@@ -22,6 +18,7 @@ namespace ExpROSE.IO
                 return Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase).Substring(6);
             }
         }
+
         /// <summary>
         /// Returns a bool, which indicates if the specified path leads to a file.
         /// </summary>

@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
 using ExpROSE.IO;
 using ExpROSE.Managers;
 
-namespace ExpROSE.Sockets
+namespace ExpROSE.Loginserver.Core
 {
     // <summary>
     /// Asynchronous socket server for the game connections.
     /// </summary>
-    class Listener
+    public class Listener
     {
         private static int S_MAX_CONNECTIONS = 5000;
         private static Socket s_Listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        private static Socket[] s_Worker = new Socket[S_MAX_CONNECTIONS];
+        public static Socket[] s_Worker = new Socket[S_MAX_CONNECTIONS];
         internal static int NewSocket;
-        /// <summary> 
-        /// Initializes the socket listener for game connections and starts listening. 
-        /// </summary> 
-        /// <param name="bindPort">The port where the socket listener should be bound to.</param> 
+
+        /// <summary>
+        /// Initializes the socket listener for game connections and starts listening.
+        /// </summary>
+        /// <param name="bindPort">The port where the socket listener should be bound to.</param>
         /// <param name="maxConnections">The maximum amount of simultaneous connections.</param>
-        internal static bool init(int bindPort, int maxConnections, bool debugmode)
+        public static bool init(int bindPort, int maxConnections, bool debugmode)
         {
             Out.WriteLine("Starting up asynchronous socket server for game connections for port " + bindPort + "...");
             try
@@ -50,6 +48,7 @@ namespace ExpROSE.Sockets
                 return false;
             }
         }
+
         /// <summary>
         /// Triggered when a connection request is recieved.
         /// </summary>
@@ -66,14 +65,11 @@ namespace ExpROSE.Sockets
             s_Worker[NewSocket] = s_Listener.EndAccept(syncc);
             //try
             //{
-
-
-            //Character.Manager nUser = new Alpha.Character.Manager(s_Worker[NewSocket], NewSocket);
+            Managers.Account nUser = new Managers.Account(s_Worker[NewSocket], NewSocket);
             Out.WriteLine("Accepted connection [" + NewSocket + "]");
             // Relisten for a connection
             s_Listener.BeginAccept(new AsyncCallback(connectionRequest), null);
             //nUser = null;
-
 
             //}
             /*catch (Exception ex)
@@ -82,6 +78,8 @@ namespace ExpROSE.Sockets
                     Out.WriteError(ex.Message);
             }*/
         }
+
+
         public static void Disconnect()
         {
             Out.WriteLine("Removing Sockets from SocketManager...");
@@ -99,6 +97,7 @@ namespace ExpROSE.Sockets
             s_Worker = null;
             Out.WriteLine("Socket listener successfully closed.");
         }
+
         /// <summary>
         /// Finds a empty socket. if there isn't any then it will return 0
         /// </summary>
